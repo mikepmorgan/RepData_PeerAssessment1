@@ -67,27 +67,27 @@ totalsteps %>% ggvis(~totalsteps) %>% layer_histograms() %>% add_axis("x", title
 ## Guessing width = 1000 # range / 22
 ```
 
-<!--html_preserve--><div id="plot_id568085470-container" class="ggvis-output-container">
-<div id="plot_id568085470" class="ggvis-output"></div>
+<!--html_preserve--><div id="plot_id578980017-container" class="ggvis-output-container">
+<div id="plot_id578980017" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id568085470_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id568085470" data-renderer="svg">SVG</a>
+<a id="plot_id578980017_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id578980017" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id568085470_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id568085470" data-renderer="canvas">Canvas</a>
+<a id="plot_id578980017_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id578980017" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id568085470_download" class="ggvis-download" data-plot-id="plot_id568085470">Download</a>
+<a id="plot_id578980017_download" class="ggvis-download" data-plot-id="plot_id578980017">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id568085470_spec = {
+var plot_id578980017_spec = {
   "data": [
     {
       "name": ".0/bin1/stack2",
@@ -218,7 +218,7 @@ var plot_id568085470_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id568085470").parseSpec(plot_id568085470_spec);
+ggvis.getPlot("plot_id578980017").parseSpec(plot_id578980017_spec);
 </script><!--/html_preserve-->
 
 #####Getting the mean and the median becomes fairly easy. This is the data that had NAs in it. 
@@ -306,38 +306,34 @@ tclean <- group_by(activityclean, date) %>% summarize(totalsteps = sum(steps))
 
 
 ```r
-totalcleansteps <- group_by(activityclean, date) %>% summarize(totalsteps = sum(steps)) %>% ggvis(~totalsteps) %>% layer_histograms() %>% add_axis("x", title = "Total Steps Taken in a Day") %>% add_axis("y", title = "Count of Days with That Many Steps") 
+activityclean %>% group_by(date) %>% summarize(totalsteps = sum(steps)) %>% ggvis(~totalsteps) %>% layer_histograms() %>% add_axis("x", title = "Total Steps Taken in a Day") %>% add_axis("y", title = "Count of Days with That Many Steps") 
 ```
 
 ```
 ## Guessing width = 1000 # range / 22
 ```
 
-```r
-print(totalcleansteps)
-```
-
-<!--html_preserve--><div id="plot_528224665-container" class="ggvis-output-container">
-<div id="plot_528224665" class="ggvis-output"></div>
+<!--html_preserve--><div id="plot_id491922256-container" class="ggvis-output-container">
+<div id="plot_id491922256" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_528224665_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_528224665" data-renderer="svg">SVG</a>
+<a id="plot_id491922256_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id491922256" data-renderer="svg">SVG</a>
  | 
-<a id="plot_528224665_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_528224665" data-renderer="canvas">Canvas</a>
+<a id="plot_id491922256_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id491922256" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_528224665_download" class="ggvis-download" data-plot-id="plot_528224665">Download</a>
+<a id="plot_id491922256_download" class="ggvis-download" data-plot-id="plot_id491922256">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_528224665_spec = {
+var plot_id491922256_spec = {
   "data": [
     {
       "name": ".0/bin1/stack2",
@@ -457,18 +453,18 @@ var plot_528224665_spec = {
   ],
   "padding": null,
   "ggvis_opts": {
-    "width": 600,
-    "height": 400,
     "keep_aspect": false,
     "resizable": true,
     "padding": {},
     "duration": 250,
     "renderer": "svg",
-    "hover_duration": 0
+    "hover_duration": 0,
+    "width": 672,
+    "height": 480
   },
   "handlers": null
 };
-ggvis.getPlot("plot_528224665").parseSpec(plot_528224665_spec);
+ggvis.getPlot("plot_id491922256").parseSpec(plot_id491922256_spec);
 </script><!--/html_preserve-->
 
 #####Here are the mean and median number of steps, cleaned. 

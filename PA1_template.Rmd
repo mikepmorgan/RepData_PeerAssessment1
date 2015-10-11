@@ -42,7 +42,6 @@ totalsteps <- group_by(activity, date) %>% filter(!is.na(steps)) %>% summarize(t
 
 totalsteps %>% ggvis(~totalsteps) %>% layer_histograms() %>% add_axis("x", title = "Total Steps Taken in a Day") %>% add_axis("y", title = "Count of Days with That Many Steps") 
 
-
 ``` 
 
 #####Getting the mean and the median becomes fairly easy. This is the data that had NAs in it. 
@@ -118,8 +117,7 @@ tclean <- group_by(activityclean, date) %>% summarize(totalsteps = sum(steps))
 
 ```{r}
 
-totalcleansteps <- group_by(activityclean, date) %>% summarize(totalsteps = sum(steps)) %>% ggvis(~totalsteps) %>% layer_histograms() %>% add_axis("x", title = "Total Steps Taken in a Day") %>% add_axis("y", title = "Count of Days with That Many Steps") 
-print(totalcleansteps)
+activityclean %>% group_by(date) %>% summarize(totalsteps = sum(steps)) %>% ggvis(~totalsteps) %>% layer_histograms() %>% add_axis("x", title = "Total Steps Taken in a Day") %>% add_axis("y", title = "Count of Days with That Many Steps") 
 
 ```
 
