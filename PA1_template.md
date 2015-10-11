@@ -67,27 +67,27 @@ totalsteps %>% ggvis(~totalsteps) %>% layer_histograms() %>% add_axis("x", title
 ## Guessing width = 1000 # range / 22
 ```
 
-<!--html_preserve--><div id="plot_id578980017-container" class="ggvis-output-container">
-<div id="plot_id578980017" class="ggvis-output"></div>
+<!--html_preserve--><div id="plot_id493377290-container" class="ggvis-output-container">
+<div id="plot_id493377290" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id578980017_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id578980017" data-renderer="svg">SVG</a>
+<a id="plot_id493377290_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id493377290" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id578980017_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id578980017" data-renderer="canvas">Canvas</a>
+<a id="plot_id493377290_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id493377290" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id578980017_download" class="ggvis-download" data-plot-id="plot_id578980017">Download</a>
+<a id="plot_id493377290_download" class="ggvis-download" data-plot-id="plot_id493377290">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id578980017_spec = {
+var plot_id493377290_spec = {
   "data": [
     {
       "name": ".0/bin1/stack2",
@@ -218,7 +218,7 @@ var plot_id578980017_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id578980017").parseSpec(plot_id578980017_spec);
+ggvis.getPlot("plot_id493377290").parseSpec(plot_id493377290_spec);
 </script><!--/html_preserve-->
 
 #####Getting the mean and the median becomes fairly easy. This is the data that had NAs in it. 
@@ -295,7 +295,7 @@ names(c)[1] <- "steps"
 activityclean <- rbind(activityclean, c)
 ```
 
-#####Next, I used this clean data to create a data set and histogram comparable to the first histogram. tclean is a data set I used for to calculate the actual difference between the original data; the histogram is created by the totalcleansteps code, piped all the way to the graph. 
+#####Next, I used this clean data to create a data set and histogram comparable to the first histogram. tclean is a data set I used for to calculate the actual difference between the original data; the histogram is created by the activityclean data, piped all the way to the graph. 
 
 
 ```r
@@ -313,27 +313,27 @@ activityclean %>% group_by(date) %>% summarize(totalsteps = sum(steps)) %>% ggvi
 ## Guessing width = 1000 # range / 22
 ```
 
-<!--html_preserve--><div id="plot_id491922256-container" class="ggvis-output-container">
-<div id="plot_id491922256" class="ggvis-output"></div>
+<!--html_preserve--><div id="plot_id764209528-container" class="ggvis-output-container">
+<div id="plot_id764209528" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id491922256_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id491922256" data-renderer="svg">SVG</a>
+<a id="plot_id764209528_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id764209528" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id491922256_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id491922256" data-renderer="canvas">Canvas</a>
+<a id="plot_id764209528_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id764209528" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id491922256_download" class="ggvis-download" data-plot-id="plot_id491922256">Download</a>
+<a id="plot_id764209528_download" class="ggvis-download" data-plot-id="plot_id764209528">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id491922256_spec = {
+var plot_id764209528_spec = {
   "data": [
     {
       "name": ".0/bin1/stack2",
@@ -464,7 +464,7 @@ var plot_id491922256_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id491922256").parseSpec(plot_id491922256_spec);
+ggvis.getPlot("plot_id764209528").parseSpec(plot_id764209528_spec);
 </script><!--/html_preserve-->
 
 #####Here are the mean and median number of steps, cleaned. 

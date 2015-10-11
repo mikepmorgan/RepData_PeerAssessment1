@@ -38,7 +38,7 @@ totalsteps <- group_by(activity, date) %>% filter(!is.na(steps)) %>% summarize(t
 
 #####Next, here is a histogram of the total number of steps taken per day. 
 
-```{r}
+```{r results ='asis'}
 
 totalsteps %>% ggvis(~totalsteps) %>% layer_histograms() %>% add_axis("x", title = "Total Steps Taken in a Day") %>% add_axis("y", title = "Count of Days with That Many Steps") 
 
@@ -105,7 +105,7 @@ activityclean <- rbind(activityclean, c)
 
 ``` 
 
-#####Next, I used this clean data to create a data set and histogram comparable to the first histogram. tclean is a data set I used for to calculate the actual difference between the original data; the histogram is created by the totalcleansteps code, piped all the way to the graph. 
+#####Next, I used this clean data to create a data set and histogram comparable to the first histogram. tclean is a data set I used for to calculate the actual difference between the original data; the histogram is created by the activityclean data, piped all the way to the graph. 
 
 ```{r}
 
@@ -115,7 +115,7 @@ tclean <- group_by(activityclean, date) %>% summarize(totalsteps = sum(steps))
 
 #####Histogram of cleaned data 
 
-```{r}
+```{r results ='asis'}
 
 activityclean %>% group_by(date) %>% summarize(totalsteps = sum(steps)) %>% ggvis(~totalsteps) %>% layer_histograms() %>% add_axis("x", title = "Total Steps Taken in a Day") %>% add_axis("y", title = "Count of Days with That Many Steps") 
 
