@@ -38,9 +38,12 @@ totalsteps <- group_by(activity, date) %>% filter(!is.na(steps)) %>% summarize(t
 
 #####Next, here is a histogram of the total number of steps taken per day. 
 
-```{r results ='asis'}
+```{r}
 
-totalsteps %>% ggvis(~totalsteps) %>% layer_histograms() %>% add_axis("x", title = "Total Steps Taken in a Day") %>% add_axis("y", title = "Count of Days with That Many Steps") 
+library(ggplot2)
+
+firsthist <- ggplot(totalsteps, aes(totalsteps)) + geom_histogram() + theme_bw() + ggtitle("Histogram of Steps per Day (NAs removed)") + xlab("Total Steps in a Day") + ylab("Number of Days with That Many Steps")
+firsthist  
 
 ``` 
 
@@ -115,9 +118,10 @@ tclean <- group_by(activityclean, date) %>% summarize(totalsteps = sum(steps))
 
 #####Histogram of cleaned data 
 
-```{r results ='asis'}
+```{r}
 
-activityclean %>% group_by(date) %>% summarize(totalsteps = sum(steps)) %>% ggvis(~totalsteps) %>% layer_histograms() %>% add_axis("x", title = "Total Steps Taken in a Day") %>% add_axis("y", title = "Count of Days with That Many Steps") 
+secondhist <- ggplot(tclean, aes(totalsteps)) + geom_histogram() + theme_bw() + ggtitle("Histogram of Steps per Day (NAs replaced)") + xlab("Total Steps in a Day") + ylab("Number of Days with That Many Steps")
+secondhist 
 
 ```
 
